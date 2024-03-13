@@ -13,8 +13,6 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import ListMovie from "./components/ListMovie";
 import ListSearchMovie from "./components/ListSearchMovie";
 import { QueryClient } from "react-query";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import ListNowPlaying from "./components/ListNowPlaying";
 import { modals } from "@mantine/modals";
 
