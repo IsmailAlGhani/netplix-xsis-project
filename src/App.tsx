@@ -143,22 +143,22 @@ const App = ({ queryClient }: { queryClient: QueryClient }) => {
 
   return (
     <div className="min-h-screen bg-[#495057]">
-      <header className="sticky top-0 p-4 z-10 bg-indigo-500 text-white">
+      <header className="sticky top-0 p-4 z-10 bg-[#212529] text-white">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <Title order={5} className="!text-white">
+            <Title order={3} className="!text-white">
               Netplix
             </Title>
-            <div className="flex justify-center gap-4">
-              <Button variant="transparent" className="!text-white">
+            <div className="flex gap-4">
+              <Text size="md" lh={"md"}>
                 Movie
-              </Button>
-              <Button variant="transparent" className="!text-white">
+              </Text>
+              <Text size="md" lh={"md"}>
                 Search
-              </Button>
-              <Button variant="transparent" className="!text-white">
+              </Text>
+              <Text size="md" lh={"md"}>
                 Genre
-              </Button>
+              </Text>
             </div>
           </div>
           <div className="relative flex w-72 md:w-48">
