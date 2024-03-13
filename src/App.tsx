@@ -142,7 +142,7 @@ const App = ({ queryClient }: { queryClient: QueryClient }) => {
   }, 500);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#495057]">
       <header className="sticky top-0 p-4 z-10 bg-indigo-500 text-white">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">

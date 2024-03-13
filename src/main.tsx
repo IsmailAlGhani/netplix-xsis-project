@@ -11,6 +11,7 @@ import "@mantine/carousel/styles.css";
 const queryClient = new QueryClient();
 const theme = createTheme({
   /** Put your mantine theme override here */
+  fontFamily: "Urbanist, sans-serif",
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

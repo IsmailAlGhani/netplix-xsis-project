@@ -47,7 +47,9 @@ const ListMovie = ({
 
   return (
     <div className="flex flex-col gap-4">
-      <Title order={6}>{title}</Title>
+      <Title order={6} className="!text-white">
+        {title}
+      </Title>
       <div className="flex gap-4 pb-2 overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-500">
         {dataList.map((item, index) => (
           <div
@@ -66,8 +68,8 @@ const ListMovie = ({
               placeholderSrc={item.title}
               effect="blur" // opacity | black-and-white
             />
-            <div className="absolute rounded bg-slate-300 opacity-40 px-2 hover:opacity-100 bottom-3 right-3 left-3">
-              <Text fz="md" lh="md" className="!text-white !text-wrap">
+            <div className="absolute rounded bg-[#ced4da] opacity-40 px-2 hover:opacity-100 bottom-3 right-3 left-3">
+              <Text fz="md" lh="md" c={"dark"} className="!text-wrap">
                 {item.title}
               </Text>
             </div>
