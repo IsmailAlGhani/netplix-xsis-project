@@ -69,7 +69,7 @@ const ListMovie = ({
               effect="blur" // opacity | black-and-white
             />
             <div className="absolute rounded bg-[#ced4da] opacity-40 px-2 hover:opacity-100 bottom-3 right-3 left-3">
-              <Text fz="md" lh="md" c={"dark"} className="!text-wrap">
+              <Text fz="sm" lh="sm" c={"dark"} className="!text-wrap">
                 {item.title}
               </Text>
             </div>

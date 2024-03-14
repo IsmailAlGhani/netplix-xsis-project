@@ -1,4 +1,4 @@
-import { Title, Input, Text } from "@mantine/core";
+import { Title, Input, Text, Drawer, ActionIcon } from "@mantine/core";
 import { useEffect, useMemo, useState } from "react";
 import { debounce, filterDuplicate } from "./util";
 import {
@@ -15,11 +15,15 @@ import ListSearchMovie from "./components/ListSearchMovie";
 import { QueryClient } from "react-query";
 import ListNowPlaying from "./components/ListNowPlaying";
 import { modals } from "@mantine/modals";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
 const App = ({ queryClient }: { queryClient: QueryClient }) => {
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
   const [selectedMovie, setSelectedMovie] = useState<MovieDetail | undefined>();
   const idMovie = useMemo(() => selectedMovie?.id ?? 0, [selectedMovie]);
+  const handleOpenDrawer = () => setOpenDrawer(true);
+  const handleCloseDrawer = () => setOpenDrawer(false);
   const handleModal = (item: MovieDetail) => {
     setSelectedMovie(item);
   };
@@ -143,12 +147,32 @@ const App = ({ queryClient }: { queryClient: QueryClient }) => {
 
   return (
     <div className="min-h-screen bg-[#495057]">
+      <Drawer
+        opened={openDrawer}
+        onClose={handleCloseDrawer}
+        size={"xs"}
+        title={
+          <Title order={3} c={"dark"}>
+            Netplix
+          </Title>
+        }
+      >
+        <div className="flex flex-col gap-4">
+          <Text size="md" lh={"md"}>
+            Movie
+          </Text>
+          <Text size="md" lh={"md"}>
+            Search
+          </Text>
+          <Text size="md" lh={"md"}>
+            Genre
+          </Text>
+        </div>
+      </Drawer>
       <header className="sticky top-0 p-4 z-10 bg-[#212529] text-white">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <Title order={3} className="!text-white">
-              Netplix
-            </Title>
+          <div className="hidden sm:flex items-center gap-4">
+            <Title order={3}>Netplix</Title>
             <div className="flex gap-4">
               <Text size="md" lh={"md"}>
                 Movie
@@ -161,7 +185,17 @@ const App = ({ queryClient }: { queryClient: QueryClient }) => {
               </Text>
             </div>
           </div>
-          <div className="relative flex w-72 md:w-48">
+          <ActionIcon
+            classNames={{ root: "!flex sm:!hidden" }}
+            variant="filled"
+            color="gray"
+            size="lg"
+            aria-label="Menu"
+            onClick={handleOpenDrawer}
+          >
+            <Bars3Icon className="w-[70%] h-[70%]" strokeWidth={2} />
+          </ActionIcon>
+          <div className="relative flex">
             <Input
               radius="md"
               placeholder={"Search"}

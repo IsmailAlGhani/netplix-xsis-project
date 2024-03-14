@@ -49,7 +49,7 @@ const ListSearchMovie = ({
       <Title order={6} className="!text-white">
         {title}
       </Title>
-      <div className="grid grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
         {dataList.map((item, index) => (
           <div
             ref={dataList.length - 1 === index ? setLastElement : undefined}
@@ -68,7 +68,7 @@ const ListSearchMovie = ({
               effect="blur" // opacity | black-and-white
             />
             <div className="absolute rounded bg-[#ced4da] opacity-40 px-2 hover:opacity-100 right-3 bottom-3 left-3">
-              <Text fz="md" lh="md" c={"dark"} className="!text-wrap">
+              <Text fz="sm" lh="sm" c={"dark"} className="!text-wrap">
                 {item.title}
               </Text>
             </div>
